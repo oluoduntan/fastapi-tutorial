@@ -13,3 +13,11 @@ class CreateUserRequest(BaseModel):
     last_name: str
     password: str
     role: str
+
+class ChangePassword(BaseModel):
+    old_password: str = Field(min_length=5)
+    new_password: str = Field(min_length=5)
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
